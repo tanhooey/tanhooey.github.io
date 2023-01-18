@@ -1,0 +1,27 @@
+html {
+    background-color: floralwhite;
+    font-size: 20px;
+  }
+  body {
+    background-color:floralwhite;
+  }
+  ul {
+    background: skyblue;
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  li {
+    margin-left: 20px;
+    padding:2px;
+  }
+  table,
+td {
+    border: 1px solid #333;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
