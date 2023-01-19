@@ -17,7 +17,7 @@
     </p1>
     
 <ul>
-    <li> Block element 
+    <li> Block element
     </li>
     <li> Inline element 
     </li>
@@ -123,7 +123,7 @@ stylesheet.</li>
 <p>There are two types of list in HTML: unordered, denoted by <strong>&lt;ul&gt;</strong>
 , and ordered, denoted by <strong>&lt;ol&gt;</strong>. The elements of each list are created by nesting
 <strong>&lt;li&gt;</strong> list elements within the list type.</p>
-<p>There are different inline elements used to style text. They are the following:</p>
+<p>There are different inline elements used to style text: </p>
 <table>
     <tbody>
         <tr>
@@ -131,14 +131,21 @@ stylesheet.</li>
             <td>Description</td>
         </tr>
         <tr>
-            <td><strong>&lt;strong&gt;<strong>&lt;/strong&gt;</strong></td>
+            <td><strong>&lt;strong&gt;&lt;/strong&gt; AND &lt;b&gt;&lt;/b&gt;</strong></td>
             <td>Bolds content.</td>
         </tr>
         <tr>
-            <td><strong>&lt;em&gt;<strong>&lt;/em&gt;</strong></td>
+            <td><em>&lt;em&gt;</em>&lt;/em&gt; AND <em>&lt;i&gt;&lt;/i&gt;</strong></td>
             <td>Italicizes content.</td>
+        </tr>
+        <tr>
+            <td><mark>&lt;mark&gt;&lt;/mark&gt; AND <mark>&lt;u&gt;&lt;/u&gt;</td>
+            <td>Highlights/underlines content.</td>
         </tr>
     </tbody>
 </table>
+<p>The strong, em, and mark elements have semantics associated with them, while b, i, and u do not. MDN 
+    recommends avoiding b, i, and n, and instead consider using CSS styling.
+</p>
 </body>
 </html>

@@ -2,9 +2,12 @@ html {
     background-color: floralwhite;
     font-size: 20px;
   }
+  
   body {
     background-color:floralwhite;
+    color:black;
   }
+
   ul {
     background: skyblue;
     padding: 10px;
@@ -15,13 +18,14 @@ html {
     margin-left: 20px;
     padding:2px;
   }
-  table,
-td {
-    border: 1px solid #333;
-}
 
-thead,
-tfoot {
+  table,
+  td {
+    border: 1px solid #333;
+  }
+
+  thead,
+  tfoot {
     background-color: #333;
     color: #fff;
-}
+  }
