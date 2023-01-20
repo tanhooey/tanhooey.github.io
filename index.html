@@ -10,6 +10,7 @@
 <h1>HTML Basics</h1>
 
 <h2>I. ELEMENTS AND ATTRIBUTES</h2>
+    <script>alert("Hello world!");</script>
     <h3>Elements</h3>
     <p1> HTML is a markup language. It is made up of <strong>elements</strong>.
         The typical element contains an opening tag and its attributes, the enclosesd text content, and the closing tag.
@@ -147,5 +148,58 @@ stylesheet.</li>
 <p>The strong, em, and mark elements have semantics associated with them, while b, i, and u do not. MDN 
     recommends avoiding b, i, and n, and instead consider using CSS styling.
 </p>
+<br>
+<h2>V. Hyperlinks</h2>
+<h3>Anatomy of a Hyperlink</h3>
+<p>Hyperlinks are inline elements that wrap the content that you want to convert into a hyperlink.
+    This includes both inline (images and text) and block level (paragraphs and headings) elements. 
+</p>
+<p>The link element includes opening and closing tags &lt;a&gt;&lt;/a&gt;. Inside the opening tag there is the <b>href</b>
+attribute, which provides the path to the web material.</p>
+<p>The link element may also contain a <b>title</b> attribute, which provides additional information when users hover over the hyperlink.
+</p>
+<h3>URLs and Paths</h3>
+<p>URLs use paths to find files. Paths are organized in a directory structure, with the main directory called the 
+    <b>root</b> and subsequent directories beneath the root being called <b>subdirectories.</b>
+</p>
+<p>In a website, the index.html file in the root directory is the landing page for the website. Other index.html 
+    files can exist, but they must be found in other directories. Numerous index.html files can be landing pages for other
+    parts of the website.
+</p>
+<p>To access subdirectories, use the <b>/</b> character. To go higher up the directory hierarchy, use the <b>..</b> characters.
+</p>
+<p>In HTML, it's possible to link to just a specific part of an HTML document, or <b>document fragment.</b>
+This involves adding an <b>id </b> attribute to the block element you want to go to. Then, at the end of the URL,
+you would add a pound sign (#) and the id name. This can be done to jump to a specific part of the <i>current page</i>
+as well.</p>
+<ul>
+    Example:
+    <li>
+        <i>In the element opening tag:</i> &lt;h1 id="this_head"&gt;The content&lt;/a&gt;
+    </li>
+    <li>
+        <i>In the link itself:</i> &lt;a href="url#id"/&gt;
+    </li>
+</ul>
+<h2>VI. JavaScript </h2>
+<h3>Basic Overview</h3>
+<p>Javascript is a <i>light-weight, interpreted</i> programming language. The functionality of JavaScript can be divided into two classes: client-side and APIs. </p>
+<p><b>Client-side functionalities</b> include:</p>
+<ul>
+    <li>Storing information into variables</li>
+    <li>Performing operations on strings and other content on page</li>
+    <li>Running code in response to certain events on a page (i.e. a click)</li>
+</ul>
+<p>Application Programming Interfaces, or <b>APIs</b>, are ready made sets of code that allow programmers to implement certain functionalities that would be
+    hard/impossible to build by scratch. APIs fall into two categories: </p>
+<ul>
+    <li>
+        <b>Browser APIs </b>are built into the browser you're using. They are able to expose data regarding the surrounding computer environment and perform other complex tasks. An important
+        browser API is the <b>DOM (Document Object Model) API</b>, which allows for dynamic changing of HTML and CSS on the webpage. 
+    </li>
+    <li>
+        <b>Third-party APIs</b> are not built into the browser by default. An example is the <b>Twitter API</b>.
+    </li>
+</ul>
 </body>
 </html>
