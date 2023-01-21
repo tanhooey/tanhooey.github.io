@@ -201,5 +201,23 @@ as well.</p>
         <b>Third-party APIs</b> are not built into the browser by default. An example is the <b>Twitter API</b>.
     </li>
 </ul>
+<h3>Client-side vs Server-side Code, Dynamic vs Static</h3>
+<p><i>Client-side code</i> is code that is run on the user's machine. </p>
+<p><i>Server-side code</i> is code that is run on the server. The results of the code are downloaded and displayed in the browser. </p>
+<p><i>Dynamic code</i> is code that can update a webpage based on different circumstances. This can happen both on the server and client side.</p>
+<p><i>Static code</i> is code that does not change content of a webpage at all.</p>
+<h3>Applying JS to Your Site</h3>
+<p>JavaScript is integrated into HTML using the &lt;script&gt; element (remember it is <i>not</i> a void element; a closing tag is needed). There are multiple ways this can be used: </p>
+<ol>
+    <li>
+        <b>Internal JavaScript</b>: The JavaScript code is found right in our HTML. It is inserted as the content of the &lt;script&gt; element in the head of the document.
+    </li>
+    <li>
+        <b>External JavaScript</b>: The JavaScript code is imported from an external .js file. The path to the file is specified via the <b>src</b> tag within the &lt;script&gt; element.
+        The content of the script element is empty.
+    </li>
+</ol>
+<h3>HTML/CSS First, JS Last</h3>
+<p>Many issues can arise if you try to load JS simultaneously/before the HTML is completely loaded onto the page. </p>
 </body>
 </html>
