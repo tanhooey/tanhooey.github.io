@@ -16,9 +16,10 @@
 </head>
 
 <body>
-    <div id="intro" style="height: 100vh" class="d-flex align-items-center justify-content-center">
+    <div id="intro" style="height: 100vh" class="d-flex flex-col align-items-center justify-content-center">
         <div id="title-card">
-            <span id="title-card-contents" class="h2">|</span>
+            <span id="title-card-contents" class="text-center"></span>
+            <div id="title-card-subcontents" class="text-center"></div>
         </div>
     </div>
     <div class="container">
@@ -117,32 +118,54 @@
     <!-- jQuery JS Code goes here -->
     <script>
         $(function () {
-            let titlecardtext = 'Jason Lin'
-            let subtitlecardtext = 'I\'m a software engineer in Maryland. I build and write about stuff.'
-            // animate the blinking of the pipe
-            let blinking = setInterval(function() {
-                let text = $('#title-card-contents').html();
-                if (text[0] === '|') {
-                    $('#title-card-contents').html('');
-                }
-                else {
-                    $('#title-card-contents').html('|');
-                }
-            }, 300)
-            var timeout = setTimeout(function () {
-                clearInterval(blinking);
-                let text = $('#title-card-contents').html();
-                let i = 0
-                var type = setInterval(function() {
-                    if (i < titlecardtext.length) {
-                        $('#title-card-contents').html(titlecardtext.slice(0, i+1) + '|');
-                        i += 1;
-                    } else {
-                        $('#title-card-contents').html(titlecardtext);
-                        clearInterval(type);
+            function blink(container) {
+                let text = $('#' + container).text();
+                return setInterval(function () {
+                    if ($('#' + container).text().slice(-1) === '|') {
+                        $('#' + container).text(text.slice(0, -1));
+                        $('#' + container).append('&nbsp;');
                     }
-                }, 75)
-            }, 2000);
+                    else {
+                        $('#' + container).text(text);
+                    }
+                }, 300);
+            }
+            async function typeContent(container, text, blinkId, delay) {
+                return new Promise((resolve, reject) =>
+                    timeout = setTimeout(function () {
+                        clearInterval(blinkId);
+                        let i = 0;
+                        var type = setInterval(function () {
+                            if (i < text.length) {
+                                $('#' + container).text(text.slice(0, i + 1) + '|');
+                                i += 1;
+                            } else {
+                                clearInterval(type);
+                                resolve(timeout);
+                            }
+                        }, 50);
+                    }, delay));
+            }
+            let titlecardtext = 'hey, my name\'s jason!';
+            let subtitlecardtext = 'i\'m a full-stack software engineer. i build and write about stuff.';
+            let blinkId = blink('title-card-contents');
+            typeContent('title-card-contents', titlecardtext, blinkId, 1500).then((value) => {
+                return new Promise((resolve, reject) => {
+                    clearTimeout(value);
+                    $('#title-card-contents').text(titlecardtext).append('&nbsp;');
+                    typeContent('title-card-subcontents', subtitlecardtext, 10).then((value) => {
+                        clearTimeout(value);
+                        blink('title-card-subcontents');
+                    })
+                    let delay = setTimeout(function () {
+                        resolve(delay);
+                    }, 3000)
+                })
+            }).then((value) => {
+                clearTimeout(value);
+                console.log('bruh');
+            });;
+
         })
     </script>
 </body>
