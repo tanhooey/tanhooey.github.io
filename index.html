@@ -17,8 +17,9 @@
 
 <body>
     <div id="intro" style="height: 100vh" class="d-flex flex-col align-items-center justify-content-center">
-        <div id="title-card">
-            <span id="title-card-contents" class="text-center"></span>
+        <div id="title-card" class="m-5">
+            <div id="title-card-contents" class="text-center">|</div>
+            <br/>
             <div id="title-card-subcontents" class="text-center"></div>
         </div>
     </div>
@@ -143,13 +144,14 @@
                                 clearInterval(type);
                                 resolve(timeout);
                             }
-                        }, 50);
+                        }, 40);
                     }, delay));
             }
             let titlecardtext = 'hey, my name\'s jason!';
             let subtitlecardtext = 'i\'m a full-stack software engineer. i build and write about stuff.';
             let blinkId = blink('title-card-contents');
-            typeContent('title-card-contents', titlecardtext, blinkId, 1500).then((value) => {
+            typeContent('title-card-contents', titlecardtext, blinkId, 1500)
+            .then((value) => {
                 return new Promise((resolve, reject) => {
                     clearTimeout(value);
                     $('#title-card-contents').text(titlecardtext).append('&nbsp;');
@@ -161,9 +163,10 @@
                         resolve(delay);
                     }, 3000)
                 })
-            }).then((value) => {
+            })
+            .then((value) => {
                 clearTimeout(value);
-                console.log('bruh');
+                // make the scroll down icon appear
             });;
 
         })
