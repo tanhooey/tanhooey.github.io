@@ -101,7 +101,39 @@
             Coming soon...
         </div>
         <hr />
+        <div id="blogs">
+            <h2>Blogs</h2>
+            <div id="blogcards" class="row text-center">
+                <div class="col-4">
+                    <div class="card bg-dark">
+                        <img class="card-img-top" src="https://seeklogo.com/images/H/half-life-lambda-logo-F2F9875056-seeklogo.com.png" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Anonymous Functions</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div id="footer">
+            <ul class="nav pb-3 mb-3 justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link text-secondary px-2" href="#intro">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary px-2" href="#experience">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary px-2" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary px-2" href="#blogs">Blogs</a>
+                </li>
+            </ul>
+        </div>
     </div>
+
 
 
 
@@ -115,70 +147,7 @@
     <!-- Import jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- jQuery JS Code goes here -->
-    <script>
-        $(function () {
-            function blink(container) {
-                let text = $('#' + container).text();
-                return setInterval(function () {
-                    if ($('#' + container).text().slice(-1) === '|') {
-                        $('#' + container).text(text.slice(0, -1));
-                        $('#' + container).append('&nbsp;');
-                    }
-                    else {
-                        $('#' + container).text(text);
-                    }
-                }, 300);
-            }
-            async function typeContent(container, text, blinkId, delay) {
-                return new Promise((resolve, reject) =>
-                    timeout = setTimeout(function () {
-                        clearInterval(blinkId);
-                        let i = 0;
-                        var type = setInterval(function () {
-                            if (i < text.length) {
-                                $('#' + container).text(text.slice(0, i + 1) + '|');
-                                i += 1;
-                            } else {
-                                clearInterval(type);
-                                resolve(timeout);
-                            }
-                        }, 40);
-                    }, delay));
-            }
-            let titlecardtext = 'hey, my name\'s jason!';
-            let subtitlecardtext = 'i\'m a full-stack software engineer. i build and write about stuff.';
-            let blinkId = blink('title-card-contents');
-            typeContent('title-card-contents', titlecardtext, blinkId, 1500)
-                .then((value) => {
-                    return new Promise((resolve, reject) => {
-                        clearTimeout(value);
-                        $('#title-card-contents').text(titlecardtext).append('&nbsp;');
-                        typeContent('title-card-subcontents', subtitlecardtext, 10).then((value) => {
-                            clearTimeout(value);
-                            blink('title-card-subcontents');
-                        })
-                        let delay = setTimeout(function () {
-                            resolve(delay);
-                        }, 3000)
-                    })
-                })
-                .then((value) => {
-                    clearTimeout(value);
-                    // make the scroll down icon appear
-                    $('.scroll-indicator').removeAttr('hidden').addClass('fade-in');
-                });
-            $('#scroller').on('click', function () {
-                window.location = '#experience'
-            });
-            $(document).on('scroll', function () {
-                let bounds = $('#intro')[0].getBoundingClientRect();
-                let bottom = bounds.bottom;
-                const opacity = 1.5 * (bounds.height - bottom) / bounds.height;
-                const x = 1 - Math.max(0, Math.min(opacity, 1));
-                $('#scroller').fadeTo(0, x);
-            })
-        })
-    </script>
+    <script src="js/site.js"></script>
 </body>
 
 </html>
