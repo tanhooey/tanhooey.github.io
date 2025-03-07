@@ -1,5 +1,5 @@
 const TITLECARDTEXT = 'hey, my name\'s jason!';
-const SUBTITLECARDTEXT = 'i\'m a full-stack software engineer. i build and write about stuff.';
+const SUBTITLECARDTEXT = 'i\'m a full-stack software engineer.';
 const BLINKID = blink('title-card-contents');
 
 // utility functions
@@ -71,7 +71,7 @@ function attachEventHandlers() {
 }
 
 // code that runs when DOM is done loading
-const init = $(function () {
+$(function () {
     // run the intro card
     runIntro();
     attachEventHandlers();

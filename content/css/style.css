@@ -1,0 +1,50 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #28282B !important;
+  color: white;
+}
+
+.scroll-down-indicator-intro {
+  animation-duration: 1s;
+  animation-name: fade-in;
+}
+
+div.fade-in {
+  display: block;
+  animation: fade-in 0.7s ease-in forwards;
+}
+
+div.fade-out {
+  animation: fade-out 0.7s ease-out forwards;
+}
+
+div.bounce {
+  animation: bounce 0.7s
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    display: none;
+  }
+
+  to {
+    opacity: 1;
+    display: inline-block;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 100;
+    display: inline-block;
+  }
+
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
